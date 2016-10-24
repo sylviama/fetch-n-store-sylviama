@@ -1,24 +1,25 @@
 ﻿var app = angular.module("fetchNStore", []);
 
 app.controller("fetchButton", function ($scope, $http) {
-    $scope.fetchValue = "wakakakaka";
-    $scope.methods = ["Get", "Post", "Put", "Delete"];
-    console.log($scope.methodSelected);
+    
+    $scope.methods = ["Get", "Head"];
+    $scope.urls = ["http://www.omdbapi.com/?s=harry&r=json", "https://ngtododemo.firebaseio.com/.json", "https://www.facebook.com", "https://www.realtyshares.com/blog/nnn-investing-the-basics"];
+    
     $scope.fetchFunction=function()
     {
         $http({
-            method: "Get",
-            //url:"www.facebook.com"
-            url: "http://www.omdbapi.com/?s=harry&r=json"
+            method: $scope.methodSelected,
+            url: $scope.urlSelected
         }).then(function mysuccess(response) {
-            $scope.result = response.status;
-            console.log($scope.result);
-
+            $scope.statusResult = response.status;
+            
+            //calculate response time
             var time = response.config.responseTimestamp - response.config.requestTimestamp;
-            console.log('Time taken ' + (time / 1000) + ' seconds.');
+            $scope.requestTime=new Date();
+            $scope.showtime=(time / 1000) + ' seconds.';
 
         }, function myerror(response) {
-            $scope.result = response.statusText;
+            $scope.statusResult = response.statusText;
         })
         console.log("this is the result after clicking ng-click");
     }
@@ -29,6 +30,7 @@ app.controller("fetchButton", function ($scope, $http) {
     
 })
 
+//calculate response time
 app.factory('logTimeTaken', [function () {
     var logTimeTaken = {
         request: function (config) {
