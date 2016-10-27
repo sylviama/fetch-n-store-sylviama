@@ -5,6 +5,7 @@ app.controller("fetchButton", ['$scope', '$http', function ($scope, $http) {
     $scope.methods = ["Get", "Head"];
     $scope.urls = ["http://www.omdbapi.com/?s=harry&r=json", "https://ngtododemo.firebaseio.com/.json", "https://www.facebook.com", "https://www.realtyshares.com/blog/nnn-investing-the-basics"];
 
+    //fetch
     $scope.fetchFunction = function () {
         $http({
             method: $scope.result.HttpMethod,
@@ -23,12 +24,16 @@ app.controller("fetchButton", ['$scope', '$http', function ($scope, $http) {
         console.log("this is the result after clicking ng-click");
     }
 
+
+    //get
     $scope.GetFunction = function () {
         $http.get('/api/Response').then(function mysuccess(response) {
             $scope.getResult=response;
         }).then(function myerror(response) { });
     }
 
+
+    //post
     $scope.PostFunction = function () {
         $http.post('/api/Response',
             {
@@ -40,6 +45,17 @@ app.controller("fetchButton", ['$scope', '$http', function ($scope, $http) {
         }).success(function (response) {
             console.log(response);
         }).error(function (response) { console.log("error");})
+    }
+
+    //delete
+    $scope.DeleteFunction=function(id)
+    {
+        $http.delete('/api/Response/' + id).success(function (response) {
+            console.log("Successful delete");
+            $scope.GetFunction();
+        }).error(function (response) {
+            console.log("Ops..");
+        })
     }
 
 }])

@@ -18,6 +18,7 @@
         <h4><b>URL:</b> {{result.URL}}</h4>
         <h4><b>Http Method:</b> {{result.HttpMethod}}</h4>
         <h4><b>Response Time:</b> {{result.ResponseTime}} seconds</h4>
+        
     </div>
     <button ng-click="PostFunction()">Store</button>
     <button ng-click="GetFunction()">Show List</button>
@@ -35,6 +36,7 @@
                         <th>Status Code</th>
                         <th>Response Time</th>
                         <th>Time Requested</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody ng-repeat="r in getResult.data">
@@ -46,6 +48,7 @@
                             <td>{{r.StatusCode}}</td>
                             <td>{{r.ResponseTime}} seconds</td>
                             <td>{{r.TimeRequest}}</td>
+                            <td><button ng-click="DeleteFunction(r.ResponseId)">Delete</button></td>
                         </tr>
                     
                 </tbody>

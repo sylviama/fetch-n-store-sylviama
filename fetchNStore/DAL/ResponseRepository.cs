@@ -38,5 +38,13 @@ namespace fetchNStore.DAL
         {
             return Context.response.ToList();
         }
+
+        //delete
+        public void DeleteResponse(int id)
+        {
+            Response record = Context.response.FirstOrDefault(r=>r.ResponseId==id);
+            Context.response.Remove(record);
+            Context.SaveChanges();
+        }
     }
 }

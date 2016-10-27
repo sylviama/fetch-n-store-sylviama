@@ -41,6 +41,8 @@ namespace fetchNStore.Controllers
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+            ResponseRepository repo = new ResponseRepository();
+            repo.DeleteResponse(id);
         }
     }
 }
