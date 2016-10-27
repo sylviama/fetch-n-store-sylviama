@@ -31,9 +31,9 @@ namespace fetchNStore.Migrations
             
             context.response.AddOrUpdate(
                 r => r.URL,
-                new Response { StatusCode = 200, URL = "https://facebook.com", ResponseTime = 0.5, HttpMethod = "Get" , TimeRequest=new DateTime(2002,2,3) },
-                new Response { StatusCode = 300, URL = "https://amazon.com", ResponseTime = 0.04, HttpMethod = "Get", TimeRequest = new DateTime(2002, 2, 5) },
-                new Response { StatusCode = 201, URL = "https://google.com", ResponseTime = 0.2, HttpMethod = "HEAD", TimeRequest = new DateTime(2002, 2, 4) }
+                new Response { StatusCode = 200, URL = "https://facebook.com", ResponseTime = "0.5", HttpMethod = "Get" , TimeRequest="2002,2,3" },
+                new Response { StatusCode = 300, URL = "https://amazon.com", ResponseTime = "0.04", HttpMethod = "Get", TimeRequest = "2002, 2, 5" },
+                new Response { StatusCode = 201, URL = "https://google.com", ResponseTime = "0.2", HttpMethod = "HEAD", TimeRequest = "2002, 2, 4" }
                 );
         }
     }

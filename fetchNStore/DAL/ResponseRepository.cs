@@ -20,9 +20,16 @@ namespace fetchNStore.DAL
             Context = context;
         }
         //save
-        public void SaveResponse(Response response)
+        public void SaveResponse(dynamic responseData)
         {
-            Context.response.Add(response);
+            Response res = new Response();
+            res.StatusCode = responseData.StatusCode;
+            res.ResponseTime = responseData.ResponseTime;
+            res.TimeRequest = responseData.TimeRequest;
+            res.HttpMethod = responseData.HttpMethod;
+            res.URL = responseData.URL;
+
+            Context.response.Add(res);
             Context.SaveChanges();
         }
 

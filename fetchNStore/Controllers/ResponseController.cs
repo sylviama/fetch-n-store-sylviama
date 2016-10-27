@@ -26,10 +26,11 @@ namespace fetchNStore.Controllers
 
         // POST api/<controller>
         //change data type into dynamic, so that it could be JSON
-        public void Post([FromBody]dynamic value)
+        public dynamic Post([FromBody]dynamic value)
         {
             ResponseRepository repo = new ResponseRepository();
-            repo.SaveResponse(value.Value);
+            repo.SaveResponse(value);
+            return value;
         }
 
         // PUT api/<controller>/5

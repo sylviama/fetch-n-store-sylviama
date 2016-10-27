@@ -190,6 +190,14 @@
     <Compile Include="Migrations\201610241642143_InitialCreate.Designer.cs">
       <DependentUpon>201610241642143_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610271629230_change timerequest to string.cs" />
+    <Compile Include="Migrations\201610271629230_change timerequest to string.Designer.cs">
+      <DependentUpon>201610271629230_change timerequest to string.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610271652447_v2.cs" />
+    <Compile Include="Migrations\201610271652447_v2.Designer.cs">
+      <DependentUpon>201610271652447_v2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -1054,6 +1062,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610241642143_InitialCreate.resx">
       <DependentUpon>201610241642143_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610271629230_change timerequest to string.resx">
+      <DependentUpon>201610271629230_change timerequest to string.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610271652447_v2.resx">
+      <DependentUpon>201610271652447_v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

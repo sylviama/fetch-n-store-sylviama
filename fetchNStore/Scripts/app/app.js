@@ -15,7 +15,7 @@ app.controller("fetchButton", ['$scope', '$http', function ($scope, $http) {
             //calculate response time
             var time = response.config.responseTimestamp - response.config.requestTimestamp;
             $scope.result.RequestTime = new Date();
-            $scope.result.ResponseTime = (time / 1000) + ' seconds.';
+            $scope.result.ResponseTime = time / 1000;
 
         }, function myerror(response) {
             $scope.result.StatusCode = response.statusText;
@@ -36,7 +36,7 @@ app.controller("fetchButton", ['$scope', '$http', function ($scope, $http) {
             "URL": $scope.result.URL,
             "ResponseTime": $scope.result.ResponseTime,
             "HttpMethod": $scope.result.HttpMethod,
-            "TimeRequest":$scope.result.TimeRequest
+            "TimeRequest":$scope.result.RequestTime
         }).success(function (response) {
             console.log(response);
         }).error(function (response) { console.log("error");})
