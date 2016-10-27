@@ -2,7 +2,59 @@
     ViewBag.Title = "Home Page";
 }
 
+<div >
+    <div class="text-center">
+        <select ng-model="result.HttpMethod">
+            <option ng-repeat="x in methods">{{x}}</option>
+        </select>
+        <select ng-model="result.URL">
+            <option ng-repeat="u in urls">{{u}}</option>
+        </select>
+        
+        <button ng-click="fetchFunction()">Fetch</button>
+    </div>
+    <div>
+        <h4><b>Response Status Code:</b> {{result.StatusCode}}</h4>
+        <h4><b>URL:</b> {{result.URL}}</h4>
+        <h4><b>Http Method:</b> {{result.HttpMethod}}</h4>
+        <h4><b>Response Time:</b> {{result.ResponseTime}} seconds</h4>
+    </div>
+    <button ng-click="PostFunction()">Store</button>
+    <button ng-click="GetFunction()">Show List</button>
 
+    <br /><br />
+
+    <div>
+        <h4 class="text-center">Response Data List</h4>
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Http Method</th>
+                        <th>Status Code</th>
+                        <th>Response Time</th>
+                        <th>Time Requested</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="r in getResult.data">
+                    
+                    
+                        <tr>
+                            <td>{{r.URL}}</td>
+                            <td>{{r.HttpMethod}}</td>
+                            <td>{{r.StatusCode}}</td>
+                            <td>{{r.ResponseTime}} seconds</td>
+                            <td>{{r.TimeRequest}}</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
 
 
 <div class="jumbotron">

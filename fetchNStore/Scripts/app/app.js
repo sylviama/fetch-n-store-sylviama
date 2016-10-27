@@ -1,34 +1,48 @@
 ﻿var app = angular.module("fetchNStore", []);
 
-app.controller("fetchButton", function ($scope, $http) {
-    
+app.controller("fetchButton", ['$scope', '$http', function ($scope, $http) {
+
     $scope.methods = ["Get", "Head"];
     $scope.urls = ["http://www.omdbapi.com/?s=harry&r=json", "https://ngtododemo.firebaseio.com/.json", "https://www.facebook.com", "https://www.realtyshares.com/blog/nnn-investing-the-basics"];
-    
-    $scope.fetchFunction=function()
-    {
+
+    $scope.fetchFunction = function () {
         $http({
-            method: $scope.methodSelected,
-            url: $scope.urlSelected
+            method: $scope.result.HttpMethod,
+            url: $scope.result.URL
         }).then(function mysuccess(response) {
-            $scope.statusResult = response.status;
-            
+            $scope.result.StatusCode = response.status;
+
             //calculate response time
             var time = response.config.responseTimestamp - response.config.requestTimestamp;
-            $scope.requestTime=new Date();
-            $scope.showtime=(time / 1000) + ' seconds.';
+            $scope.result.RequestTime = new Date();
+            $scope.result.ResponseTime = (time / 1000) + ' seconds.';
 
         }, function myerror(response) {
-            $scope.statusResult = response.statusText;
+            $scope.result.StatusCode = response.statusText;
         })
         console.log("this is the result after clicking ng-click");
     }
 
-    
+    $scope.GetFunction = function () {
+        $http.get('/api/Response').then(function mysuccess(response) {
+            $scope.getResult=response;
+        }).then(function myerror(response) { });
+    }
 
-    
-    
-})
+    $scope.PostFunction = function () {
+        $http.post('/api/Response',
+            {
+            "StatusCode": $scope.result.StatusCode,
+            "URL": $scope.result.URL,
+            "ResponseTime": $scope.result.ResponseTime,
+            "HttpMethod": $scope.result.HttpMethod,
+            "TimeRequest":$scope.result.TimeRequest
+        }).success(function (response) {
+            console.log(response);
+        }).error(function (response) { console.log("error");})
+    }
+
+}])
 
 //calculate response time
 app.factory('logTimeTaken', [function () {

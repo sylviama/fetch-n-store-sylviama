@@ -4,3 +4,9 @@ C:\Users\NSSStudent\Documents\Visual Studio 2015\Projects\TestingAngular\fetchNS
 C:\Users\NSSStudent\Documents\Visual Studio 2015\Projects\TestingAngular\fetchNStore\fetchNStoreTest\obj\Debug\fetchNStoreTest.dll
 C:\Users\NSSStudent\Documents\Visual Studio 2015\Projects\TestingAngular\fetchNStore\fetchNStoreTest\obj\Debug\fetchNStoreTest.pdb
 C:\Users\NSSStudent\Documents\Visual Studio 2015\Projects\TestingAngular\fetchNStore\fetchNStoreTest\obj\Debug\fetchNStoreTest.csprojResolveAssemblyReference.cache
+C:\Users\NSSStudent\Documents\GitHub\fetchNStore\fetch-n-store-sylviama\fetchNStoreTest\bin\Debug\fetchNStoreTest.dll
+C:\Users\NSSStudent\Documents\GitHub\fetchNStore\fetch-n-store-sylviama\fetchNStoreTest\bin\Debug\fetchNStoreTest.pdb
+C:\Users\NSSStudent\Documents\GitHub\fetchNStore\fetch-n-store-sylviama\fetchNStoreTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\NSSStudent\Documents\GitHub\fetchNStore\fetch-n-store-sylviama\fetchNStoreTest\obj\Debug\fetchNStoreTest.dll
+C:\Users\NSSStudent\Documents\GitHub\fetchNStore\fetch-n-store-sylviama\fetchNStoreTest\obj\Debug\fetchNStoreTest.pdb
+C:\Users\NSSStudent\Documents\GitHub\fetchNStore\fetch-n-store-sylviama\fetchNStoreTest\obj\Debug\fetchNStoreTest.csprojResolveAssemblyReference.cache

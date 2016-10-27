@@ -9,28 +9,10 @@
     @Scripts.Render("~/bundles/angular")
 
 </head>
-<body>
+<body ng-app="fetchNStore" ng-controller="fetchButton">
    
 
-    <div ng-app="fetchNStore" ng-controller="fetchButton">
-        <div class="text-center">
-            <select ng-model="methodSelected">
-                <option ng-repeat="x in methods">{{x}}</option>
-            </select>
-            <select ng-model="urlSelected">
-                <option ng-repeat="u in urls">{{u}}</option>
-            </select>
-            @*<input value="http://www.omdbapi.com/?s=harry&r=json" placeholder="http://www.omdbapi.com/?s=harry&r=json" ng-model="urlSelected"/>*@
-            <button ng-click="fetchFunction(methodSelected, urlSelected)">Fetch</button>
-        </div>
-        <div>
-            <h4><b>Response Status Code:</b> {{statusResult}}</h4>
-            <h4><b>URL:</b> {{urlSelected}}</h4>
-            <h4><b>XHttp Method:</b> {{methodSelected}}</h4>
-            <h4><b>Response Time:</b> {{showtime}}</h4>
-        </div>
-    </div>
-    <br /><br />
+    
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
