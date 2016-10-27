@@ -1,5 +1,7 @@
 #Fetch 'N Store
 
+<img width="1046" alt="screen shot 2016-10-27 at 2 54 30 pm" src="https://cloud.githubusercontent.com/assets/16583776/19782987/d0ca5b8e-9c55-11e6-8ae1-f310d764e8be.png">
+
 The goal of this exercise is to assist the student in understanding the request and response cycle ofthe HTTP protocol while reviewing aspects of AngularJS, AJAX and the repository pattern. This is a multi-part exercise requiring both in-class and ouside of class work.
 
 ## Rules
